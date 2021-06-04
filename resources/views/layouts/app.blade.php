@@ -38,6 +38,10 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('sila-user.index') }}">Sila Users</a>
+                        </li>
+
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -70,6 +74,7 @@
                                 </div>
                             </li>
                         @endguest
+                        
                     </ul>
                 </div>
             </div>
@@ -81,3 +86,9 @@
     </div>
 </body>
 </html>
+<script>
+    @if(session()->has('message'))
+        alert('{{ session("message") }}');
+    @endif
+
+</script>
